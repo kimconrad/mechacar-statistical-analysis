@@ -1,0 +1,17 @@
+library(dplyr)
+mechacar <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
+vehicle_length <- mechacar["vehicle_length"]
+vehicle_weight <- mechacar["vehicle_weight"]
+spoiler_angle <- mechacar["spoiler_angle"]
+ground_clearance <- mechacar["ground_clearance"]
+AWD <- mechacar["AWD"]
+mpg <- mechacar["mpg"]
+
+lm(vehicle_length ~ mpg, mechacar)
+lm(vehicle_weight ~ mpg, mechacar)
+lm(spoiler_angle ~ mpg, mechacar)
+lm(ground_clearance ~ mpg, mechacar)
+lm(AWD ~ mpg, mechacar)
+lm(mpg ~ mpg, mechacar)
+
+summary(mechacar)
